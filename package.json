@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "npm install --production"
+    "build": "node copy-backend.js && npm install --production",
+    "copy-backend": "node copy-backend.js"
   },
   "engines": {
     "node": ">=18.0.0"

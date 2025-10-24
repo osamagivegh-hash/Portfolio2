@@ -6,14 +6,14 @@ const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
-const connectDB = require('./backend/config/database');
-const portfolioRoutes = require('./backend/routes/portfolio');
-const contactRoutes = require('./backend/routes/contact');
-const projectRoutes = require('./backend/routes/projects');
-const skillRoutes = require('./backend/routes/skills');
-const testimonialRoutes = require('./backend/routes/testimonials');
-const adminRoutes = require('./backend/routes/admin');
-const uploadRoutes = require('./backend/routes/upload');
+const connectDB = require('./config/database');
+const portfolioRoutes = require('./routes/portfolio');
+const contactRoutes = require('./routes/contact');
+const projectRoutes = require('./routes/projects');
+const skillRoutes = require('./routes/skills');
+const testimonialRoutes = require('./routes/testimonials');
+const adminRoutes = require('./routes/admin');
+const uploadRoutes = require('./routes/upload');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -100,7 +100,7 @@ app.use('/uploads', (req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
-}, express.static('backend/uploads'));
+}, express.static('uploads'));
 
 // 404 handler
 app.use('*', (req, res) => {
