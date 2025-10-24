@@ -14,6 +14,8 @@ if (!process.env.MONGODB_URI) {
 
 // Debug: Log the MongoDB URI (first 20 characters only for security)
 console.log('MongoDB URI (first 20 chars):', process.env.MONGODB_URI ? process.env.MONGODB_URI.substring(0, 20) + '...' : 'NOT SET');
+console.log('Environment:', process.env.NODE_ENV);
+console.log('Port:', process.env.PORT);
 
 const connectDB = require('./config/database');
 const portfolioRoutes = require('./routes/portfolio');

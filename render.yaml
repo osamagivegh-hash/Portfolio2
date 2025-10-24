@@ -3,7 +3,7 @@ services:
     name: portfolio-backend
     env: node
     plan: free
-    buildCommand: npm install --production
+    buildCommand: npm install --production --audit-level=moderate
     startCommand: npm start
     envVars:
       - key: NODE_ENV
