@@ -65,33 +65,7 @@ vercel --prod
 
 ## ملفات الإعداد:
 
-### 1. **vercel.json:**
-```json
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/admin/(.*)",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
-}
-```
-
-### 2. **package.json:**
+### 1. **package.json:**
 ```json
 {
   "name": "portfolio-frontend",
@@ -102,7 +76,7 @@ vercel --prod
 }
 ```
 
-### 3. **vite.config.js:**
+### 2. **vite.config.js:**
 ```javascript
 export default defineConfig({
   plugins: [react()],
@@ -111,6 +85,8 @@ export default defineConfig({
   }
 })
 ```
+
+
 
 ## اختبار النشر:
 

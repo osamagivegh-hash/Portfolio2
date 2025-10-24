@@ -16,7 +16,8 @@ git push origin main
 4. اضغط "Import"
 
 ### 3. **إعدادات Build:**
-- **Framework**: `Vite`
+- **Framework Preset**: `Vite`
+- **Root Directory**: `./`
 - **Build Command**: `npm run build`
 - **Output Directory**: `dist`
 
