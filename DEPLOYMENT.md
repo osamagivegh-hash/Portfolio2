@@ -20,8 +20,8 @@
 #### Basic Settings:
 - **Name**: `portfolio-backend`
 - **Environment**: `Node`
-- **Build Command**: `cd backend && npm install`
-- **Start Command**: `cd backend && npm start`
+- **Build Command**: `npm install && cd backend && npm install`
+- **Start Command**: `npm start`
 
 #### Environment Variables:
 ```
