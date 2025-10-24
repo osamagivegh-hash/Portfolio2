@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: portfolio-backend
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        fromDatabase:
+          name: portfolio-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        value: https://your-frontend-domain.onrender.com
+
+databases:
+  - name: portfolio-db
+    plan: free
+    databaseName: portfolio
+    user: portfolio_user
