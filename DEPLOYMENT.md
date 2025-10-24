@@ -20,10 +20,10 @@
 #### Basic Settings (Recommended):
 - **Name**: `portfolio-backend`
 - **Environment**: `Node`
-- **Build Command**: `chmod +x render-deploy.sh && ./render-deploy.sh`
-- **Start Command**: `cd backend && npm start`
+- **Build Command**: `npm run build`
+- **Start Command**: `npm start`
 
-#### Alternative Settings (if memory issues persist):
+#### Alternative Settings (if issues persist):
 - **Build Command**: `cd backend && npm install --production`
 - **Start Command**: `cd backend && npm start`
 

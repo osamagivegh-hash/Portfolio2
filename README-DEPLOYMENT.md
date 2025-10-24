@@ -16,7 +16,7 @@ This repository has been optimized for Render deployment to avoid memory issues.
 ### Required Settings:
 - **Name**: `portfolio-backend`
 - **Environment**: `Node`
-- **Build Command**: `cd backend && npm install --production`
+- **Build Command**: `npm run build`
 - **Start Command**: `npm start`
 
 ### Environment Variables:
