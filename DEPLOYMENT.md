@@ -17,14 +17,18 @@
 3. اربط repository الخاص بك
 4. املأ الإعدادات التالية:
 
-#### Basic Settings:
+#### Basic Settings (Recommended):
 - **Name**: `portfolio-backend`
 - **Environment**: `Node`
-- **Build Command**: `cd backend && npm install --production`
+- **Build Command**: `chmod +x render-deploy.sh && ./render-deploy.sh`
 - **Start Command**: `cd backend && npm start`
 
 #### Alternative Settings (if memory issues persist):
-- **Build Command**: `chmod +x render-build.sh && ./render-build.sh`
+- **Build Command**: `cd backend && npm install --production`
+- **Start Command**: `cd backend && npm start`
+
+#### Simple Settings (if scripts don't work):
+- **Build Command**: `cd backend && npm install --production --no-optional`
 - **Start Command**: `cd backend && npm start`
 
 #### Environment Variables:
