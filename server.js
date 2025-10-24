@@ -7,9 +7,9 @@ const rateLimit = require('express-rate-limit');
 // Load environment variables
 require('dotenv').config();
 
-// Load production environment variables if in production
-if (process.env.NODE_ENV === 'production') {
-  require('dotenv').config({ path: './env.production' });
+// Set default MongoDB URI if not provided
+if (!process.env.MONGODB_URI) {
+  process.env.MONGODB_URI = 'mongodb+srv://osamagivegh:990099@cluster0.npzs81o.mongodb.net/portfolio?retryWrites=true&w=majority';
 }
 
 const connectDB = require('./config/database');
