@@ -4,7 +4,7 @@
   "description": "Portfolio Backend API for Render Deployment",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "MONGODB_URI=mongodb+srv://osamagivegh:990099@cluster0.npzs81o.mongodb.net/portfolio?retryWrites=true&w=majority node server.js",
     "build": "node copy-backend.js && npm install --production",
     "copy-backend": "node copy-backend.js"
   },

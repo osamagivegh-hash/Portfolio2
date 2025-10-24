@@ -4,7 +4,13 @@ const helmet = require('helmet');
 const compression = require('compression');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
+// Load environment variables
 require('dotenv').config();
+
+// Load production environment variables if in production
+if (process.env.NODE_ENV === 'production') {
+  require('dotenv').config({ path: './env.production' });
+}
 
 const connectDB = require('./config/database');
 const portfolioRoutes = require('./routes/portfolio');

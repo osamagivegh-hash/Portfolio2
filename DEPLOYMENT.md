@@ -40,6 +40,12 @@ JWT_SECRET=your-super-secret-jwt-key-here
 FRONTEND_URL=https://your-frontend-domain.onrender.com
 ```
 
+**⚠️ Important**: Make sure to set the `MONGODB_URI` environment variable in Render Dashboard:
+1. Go to your service in Render Dashboard
+2. Click on "Environment" tab
+3. Add `MONGODB_URI` with your MongoDB connection string
+4. The URI should start with `mongodb+srv://` for MongoDB Atlas
+
 ### 3. إعداد قاعدة البيانات على Render (اختياري)
 
 1. في Render Dashboard، اضغط "New +" ثم "PostgreSQL" أو "MongoDB"
