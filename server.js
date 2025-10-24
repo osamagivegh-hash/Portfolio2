@@ -12,6 +12,9 @@ if (!process.env.MONGODB_URI) {
   process.env.MONGODB_URI = 'mongodb+srv://osamagivegh:990099@cluster0.npzs81o.mongodb.net/portfolio?retryWrites=true&w=majority';
 }
 
+// Debug: Log the MongoDB URI (first 20 characters only for security)
+console.log('MongoDB URI (first 20 chars):', process.env.MONGODB_URI ? process.env.MONGODB_URI.substring(0, 20) + '...' : 'NOT SET');
+
 const connectDB = require('./config/database');
 const portfolioRoutes = require('./routes/portfolio');
 const contactRoutes = require('./routes/contact');
