@@ -20,8 +20,12 @@
 #### Basic Settings:
 - **Name**: `portfolio-backend`
 - **Environment**: `Node`
-- **Build Command**: `npm install && cd backend && npm install`
-- **Start Command**: `npm start`
+- **Build Command**: `cd backend && npm install --production`
+- **Start Command**: `cd backend && npm start`
+
+#### Alternative Settings (if memory issues persist):
+- **Build Command**: `chmod +x render-build.sh && ./render-build.sh`
+- **Start Command**: `cd backend && npm start`
 
 #### Environment Variables:
 ```
@@ -97,10 +101,33 @@ const baseURL = 'https://your-backend-url.onrender.com';
 
 ### المشاكل الشائعة:
 
-1. **Build Failed**: تأكد من أن جميع dependencies موجودة في package.json
-2. **Database Connection Error**: تحقق من MONGODB_URI
-3. **CORS Error**: تأكد من إعداد FRONTEND_URL بشكل صحيح
-4. **Admin Login Failed**: تأكد من إنشاء admin user
+1. **Out of Memory Error**: 
+   - استخدم `cd backend && npm install --production` في Build Command
+   - أو استخدم `chmod +x render-build.sh && ./render-build.sh`
+   - تأكد من عدم تثبيت devDependencies
+
+2. **Build Failed**: تأكد من أن جميع dependencies موجودة في package.json
+3. **Database Connection Error**: تحقق من MONGODB_URI
+4. **CORS Error**: تأكد من إعداد FRONTEND_URL بشكل صحيح
+5. **Admin Login Failed**: تأكد من إنشاء admin user
+
+### حل مشاكل الذاكرة:
+
+إذا واجهت مشكلة "Out of memory":
+
+1. **استخدم Build Command محسن:**
+   ```
+   cd backend && npm install --production
+   ```
+
+2. **أو استخدم Build Script:**
+   ```
+   chmod +x render-build.sh && ./render-build.sh
+   ```
+
+3. **تأكد من عدم تثبيت frontend dependencies:**
+   - لا تثبت dependencies من المجلد الرئيسي
+   - ركز على backend فقط
 
 ### Logs:
 - اذهب إلى Render Dashboard > Service > Logs لرؤية الأخطاء
