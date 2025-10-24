@@ -20,7 +20,7 @@
 #### Basic Settings (Recommended):
 - **Name**: `portfolio-backend`
 - **Environment**: `Node`
-- **Build Command**: `npm run build`
+- **Build Command**: `npm install --production`
 - **Start Command**: `npm start`
 
 #### Alternative Settings (if issues persist):
