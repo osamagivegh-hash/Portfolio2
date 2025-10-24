@@ -86,6 +86,26 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.status(200).json({
+    status: 'success',
+    message: 'Portfolio API is running',
+    version: '1.0.0',
+    timestamp: new Date().toISOString(),
+    endpoints: {
+      health: '/api/health',
+      portfolio: '/api/portfolio',
+      contact: '/api/contact',
+      projects: '/api/projects',
+      skills: '/api/skills',
+      testimonials: '/api/testimonials',
+      admin: '/api/admin',
+      upload: '/api/upload'
+    }
+  });
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.status(200).json({
@@ -117,7 +137,21 @@ app.use('/uploads', (req, res, next) => {
 app.use('*', (req, res) => {
   res.status(404).json({
     status: 'error',
-    message: 'Route not found'
+    message: 'Route not found',
+    requestedPath: req.originalUrl,
+    method: req.method,
+    availableEndpoints: {
+      root: 'GET /',
+      health: 'GET /api/health',
+      portfolio: 'GET /api/portfolio',
+      contact: 'POST /api/contact',
+      projects: 'GET /api/projects',
+      skills: 'GET /api/skills',
+      testimonials: 'GET /api/testimonials',
+      admin: 'POST /api/admin/login',
+      upload: 'POST /api/upload/*'
+    },
+    timestamp: new Date().toISOString()
   });
 });
 
