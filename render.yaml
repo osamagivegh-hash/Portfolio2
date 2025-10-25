@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: portfolio-backend
+    name: portfolio-fullstack
     env: node
     plan: free
-    buildCommand: npm install --production
+    buildCommand: npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
@@ -15,7 +15,7 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: FRONTEND_URL
-        value: https://osamaportfolio.vercel.app
+        value: https://portfolio-fullstack.onrender.com
 
 databases:
   - name: portfolio-db
