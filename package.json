@@ -4,7 +4,7 @@
   "description": "Full Stack Portfolio - React Frontend + Express Backend",
   "main": "backend/server.js",
   "scripts": {
-    "start": "cd backend && npm start",
+    "start": "cd backend && node server.js",
     "build": "cd backend && npm run build",
     "dev": "cd backend && npm run dev",
     "install:all": "cd backend && npm install && cd ../frontend && npm install"
