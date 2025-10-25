@@ -1,28 +1,16 @@
 # Backend files (not needed for frontend deployment)
 backend/
-server.js
-config/
-models/
-routes/
-middleware/
-uploads/
+
+# Documentation and environment files
 *.md
-.env
+*.env
 .env.local
-.env.production
+backend/.env*
 
 # Development files
 node_modules/
 .git/
 .gitignore
-README.md
-DEPLOYMENT.md
-RENDER_DEPLOYMENT.md
-FIX_MONGODB_URI.md
-DEPLOYMENT_FIX.md
-API_TESTING.md
-VERCEL_DEPLOYMENT.md
 
 # Build artifacts
-dist/
-build/
+backend/uploads/
