@@ -3,6 +3,7 @@ services:
     name: portfolio-fullstack
     env: node
     plan: free
+    rootDir: .
     buildCommand: npm run build
     startCommand: cd backend && node server.js
     envVars:
